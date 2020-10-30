@@ -10,6 +10,7 @@ import HomeLayout from './layouts/HomeLayout.vue'
 
 import { BootstrapVue, BootstrapVueIcons } from 'bootstrap-vue'
 
+//awesome-swiperインポート
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/swiper-bundle.css'
 
@@ -20,6 +21,7 @@ Vue.use(VueMeta, {
 Vue.use(BootstrapVue)
 Vue.use(BootstrapVueIcons)
 
+//Swiperコンポーネント登録
 Vue.use(VueAwesomeSwiper, /* { default options with global component } */)
 
 Vue.component('DefaultLayout', DefaultLayout)
