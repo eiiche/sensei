@@ -10,16 +10,24 @@ import HomeLayout from './layouts/HomeLayout.vue'
 
 import { BootstrapVue, BootstrapVueIcons } from 'bootstrap-vue'
 
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+import 'swiper/swiper-bundle.css'
+
+
 Vue.use(VueMeta, {
     refreshOnceOnNavigation: true,
 })
 Vue.use(BootstrapVue)
 Vue.use(BootstrapVueIcons)
 
+Vue.use(VueAwesomeSwiper, /* { default options with global component } */)
+
 Vue.component('DefaultLayout', DefaultLayout)
 Vue.component('ErrorLayout', ErrorLayout)
 Vue.component('HomeLayout', HomeLayout)
 
+Vue.component('Swiper', require('./components/Swiper.vue').default);
+Vue.component('ExampleComponent', require('./components/ExampleComponent.vue').default);
 
 store.dispatch('auth/setUser', window.currentUser)
 const vm = new Vue({

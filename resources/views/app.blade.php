@@ -20,6 +20,14 @@
         <!--slick用jqueryとjs-->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
         <script src="{{asset('js/slick.min.js')}}"></script>
+
+        <link rel="stylesheet" href="path/to/swiper.css"/>
+        <script type="text/javascript" src="path/to/swiper.js"></script>
+        <script type="text/javascript" src="path/to/vue.min.js"></script>
+        <script type="text/javascript" src="path/to/dist/vue-awesome-swiper.js"></script>
+        <script type="text/javascript">
+            Vue.use(window.VueAwesomeSwiper)
+        </script>
     </head>
     <script>
         $(function(){

@@ -35,7 +35,7 @@
                         </div>
                         <div class="content2">
                            <!--カルーセル-->
-
+                            <Swiper></Swiper>
                         </div>
                         <div class="content3 pl-3">
                             <h3>がんばります。</h3>
@@ -46,6 +46,11 @@
                         </div>
                     </div>
                 </div>
+
+            </b-col>
+        </b-row>
+        <b-row>
+            <b-col col lg="12">
 
             </b-col>
         </b-row>
