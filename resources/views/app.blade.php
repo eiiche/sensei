@@ -29,18 +29,6 @@
             Vue.use(window.VueAwesomeSwiper)
         </script>
     </head>
-    <script>
-        $(function(){
-            $('.slide').slick({
-                //スライド数など変更
-                arrows:true,
-                dots:true,
-                infinite: true,
-                slidesToShow: 3,
-                slidesToScroll: 3
-            });
-        });
-    </script>
     <body>
         <div id="app"></div>
         <script>
