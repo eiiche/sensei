@@ -34,14 +34,8 @@
                             </div>
                         </div>
                         <div class="content2">
-                            <ul class="slide">
-                                <li class="slideitem"><img :src="'/images/1.png'"></li>
-                                <li class="slideitem"><img :src="'/images/1.png'"></li>
-                                <li class="slideitem"><img :src="'/images/1.png'"></li>
-                                <li class="slideitem"><img :src="'/images/1.png'"></li>
-                                <li class="slideitem"><img :src="'/images/1.png'"></li>
-                                <li class="slideitem"><img :src="'/images/1.png'"></li>
-                            </ul>
+                           <!--カルーセル-->
+
                         </div>
                         <div class="content3 pl-3">
                             <h3>がんばります。</h3>

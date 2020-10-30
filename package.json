@@ -29,6 +29,8 @@
         "vuex": "^3.5.1"
     },
     "dependencies": {
+        "swiper": "^6.3.4",
+        "vue-awesome-swiper": "^4.1.1",
         "vuetify": "^2.3.15"
     }
 }

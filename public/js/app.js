@@ -2205,12 +2205,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {},
   data: function data() {
@@ -54986,33 +54980,7 @@ var render = function() {
                   ])
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "content2" }, [
-                  _c("ul", { staticClass: "slide" }, [
-                    _c("li", { staticClass: "slideitem" }, [
-                      _c("img", { attrs: { src: "/images/1.png" } })
-                    ]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "slideitem" }, [
-                      _c("img", { attrs: { src: "/images/1.png" } })
-                    ]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "slideitem" }, [
-                      _c("img", { attrs: { src: "/images/1.png" } })
-                    ]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "slideitem" }, [
-                      _c("img", { attrs: { src: "/images/1.png" } })
-                    ]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "slideitem" }, [
-                      _c("img", { attrs: { src: "/images/1.png" } })
-                    ]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "slideitem" }, [
-                      _c("img", { attrs: { src: "/images/1.png" } })
-                    ])
-                  ])
-                ]),
+                _c("div", { staticClass: "content2" }),
                 _vm._v(" "),
                 _c("div", { staticClass: "content3 pl-3" }, [
                   _c("h3", [_vm._v("がんばります。")])
@@ -55390,7 +55358,9 @@ var render = function() {
           _c("b-col", { attrs: { col: "", lg: "12" } }, [
             _c(
               "div",
-              { staticClass: "d-inline-flex border-lightgray w-100 mt-5" },
+              {
+                staticClass: "d-inline-flex border-lightgray w-100 mt-5 h-auto"
+              },
               [
                 _c("div", { staticClass: "border-lightgray" }, [
                   _c("img", {
@@ -55398,24 +55368,24 @@ var render = function() {
                     attrs: { src: "/images/1.png" }
                   }),
                   _vm._v(" "),
-                  _c("h3", [_vm._v("タグ")]),
+                  _c("h4", [_vm._v("タグ")]),
                   _vm._v(" "),
-                  _c("h4", [_vm._v("イラスト/モデリング")]),
+                  _c("h5", [_vm._v("イラスト/モデリング")]),
                   _vm._v(" "),
-                  _c("h3", [_vm._v("★★★★★(100)")]),
+                  _c("h5", [_vm._v("★★★★★(100)")]),
                   _vm._v(" "),
-                  _c("h3", [_vm._v("SENSEIの一言:")]),
+                  _c("h4", [_vm._v("SENSEIの一言:")]),
                   _vm._v(" "),
-                  _c("h4", [_vm._v("がんばります")])
+                  _c("h5", [_vm._v("がんばります")])
                 ]),
                 _vm._v(" "),
                 _c(
                   "div",
-                  { staticClass: "sensei-detail display-flex-column" },
+                  { staticClass: "sensei-detail display-flex-column pt-2" },
                   [
                     _c("h3", [_vm._v("評価")]),
                     _vm._v(" "),
-                    _c("div", [
+                    _c("div", { staticClass: "pt-2" }, [
                       _c("div", { staticClass: "display-flex-row" }, [
                         _c("div", { staticClass: "display-flex-column" }, [
                           _c("img", {

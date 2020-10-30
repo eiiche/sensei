@@ -3,18 +3,18 @@
         <b-row>
             <b-col col lg="12">
                 <!--プロフ-->
-                <div class="d-inline-flex border-lightgray w-100 mt-5">
+                <div class="d-inline-flex border-lightgray w-100 mt-5 h-auto">
                     <div class="border-lightgray">
                         <img :src="'/images/1.png'" class="rounded-circle w-50 h-50">
-                        <h3>タグ</h3>
-                        <h4>イラスト/モデリング</h4>
-                        <h3>★★★★★(100)</h3>
-                        <h3>SENSEIの一言:</h3>
-                        <h4>がんばります</h4>
+                        <h4>タグ</h4>
+                        <h5>イラスト/モデリング</h5>
+                        <h5>★★★★★(100)</h5>
+                        <h4>SENSEIの一言:</h4>
+                        <h5>がんばります</h5>
                     </div>
-                    <div class="sensei-detail display-flex-column">
+                    <div class="sensei-detail display-flex-column pt-2">
                         <h3>評価</h3>
-                        <div>
+                        <div class="pt-2">
                             <div class="display-flex-row">
                                 <div class="display-flex-column">
                                     <img :src="'/images/1.png'" class="thumbnail rounded-circle">
