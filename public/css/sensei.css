@@ -1,0 +1,87 @@
+/*グリッド*/
+.grid {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+}
+.item {
+    padding: 15px;
+    text-align: center;
+    border: 2px solid;
+    border-color: #b9bbbe;
+}
+.image {
+    max-width: 100%;
+    height: auto;
+}
+
+.desc {
+    text-align: left;
+}
+
+/*おしらせ*/
+.news{
+    margin: 10px;
+    border: 2px solid;
+    border-color: #b9bbbe;
+}
+
+.newscontainer{
+    border: 2px solid;
+    border-color: #b9bbbe;
+}
+
+/*sensei一覧*/
+.sensei-item{
+    display: flex;
+    flex-direction: column;
+}
+.thumbnail{
+    height: 50px;
+    width: 50px;
+}
+.bg-orange{
+    background-color: #ffa07a;
+}
+
+.bg-white{
+    background-color: white;
+}
+
+.bg-lightgray{
+    background-color: #e2e6ea;
+}
+
+.content1{
+    display: flex;
+    flex-direction: row;
+}
+.achievement{
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+}
+.content2{
+
+}
+.content3{
+    text-align: left;
+}
+.display-flex-column{
+    display: flex;
+    flex-direction: column;
+}
+.display-flex-row{
+    display: flex;
+    flex-direction: row;
+}
+
+.tc-lightgray{
+    color: #818182;
+}
+
+.border-lightgray{
+    border: solid 3px;
+    border-color: #e2e6ea;
+}
+

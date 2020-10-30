@@ -1,6 +1,6 @@
 <template>
     <div
-        class="d-flex justify-content-center align-items-center" 
+        class="d-flex justify-content-center align-items-center"
         style="min-height: 100vh;"
     >
         <b-container >
@@ -36,7 +36,8 @@
                             </b-form-group>
 
 
-                            <b-button type="submit" variant="primary">ログイン</b-button>
+                            <b-button type="submit" variant="primary" >ログイン</b-button>
+                            <b-button to="/home" variant="primary">home_tmp</b-button>
                         </b-form>
                     </b-card>
                 </b-col>
