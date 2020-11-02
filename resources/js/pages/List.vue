@@ -35,7 +35,7 @@
                         </div>
                         <div class="content2">
                            <!--カルーセル-->
-                            <Swiper></Swiper>
+                            <SwiperLayout></SwiperLayout>
                         </div>
                         <div class="content3 pl-3">
                             <h3>がんばります。</h3>

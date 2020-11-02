@@ -5,7 +5,7 @@ import Login from '../pages/Login.vue'
 import Top from '../pages/Top.vue'
 import Home from '../pages/Home.vue'
 import Talkroom from '../pages/Talkroom.vue'
-import SenseiPage from '../pages/SensePage.vue'
+import SenseiPage from '../pages/SenseiPage.vue'
 import List from '../pages/List.vue'
 import store from '../store'
 
