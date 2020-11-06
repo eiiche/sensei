@@ -10,6 +10,7 @@ import ErrorLayout from './layouts/ErrorLayout.vue'
 import HomeLayout from './layouts/HomeLayout.vue'
 
 import SwiperLayout from  './components/SwiperLayout.vue'
+import BookingSchedule from "./components/BookingSchedule";
 
 
 import { BootstrapVue, BootstrapVueIcons } from 'bootstrap-vue'
@@ -39,6 +40,7 @@ Vue.component('ErrorLayout', ErrorLayout)
 Vue.component('HomeLayout', HomeLayout)
 
 Vue.component('SwiperLayout',SwiperLayout);
+Vue.component('BookingSchedule',BookingSchedule)
 
 store.dispatch('auth/setUser', window.currentUser)
 const vm = new Vue({

@@ -49,7 +49,7 @@
             <b-col col lg="12">
                 <div class="text-center mt-5">
                     <h3>予約</h3>
-                    <vc-calendar/>
+                    <BookingSchedule />
 
                 </div>
             </b-col>
