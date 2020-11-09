@@ -8,6 +8,7 @@ import Talkroom from '../pages/Talkroom.vue'
 import SenseiPage from '../pages/SenseiPage.vue'
 import List from '../pages/List.vue'
 import store from '../store'
+import BookConfirm from "../pages/BookConfirm";
 
 Vue.use(VueRouter)
 
@@ -53,6 +54,12 @@ const routes = [
         name: 'top',
         component: Top,
         meta: { layout: 'home',requiresAuth: true  },
+    },
+    {
+        path: '/bookconfirm',
+        name: 'bookconfirm',
+        component: BookConfirm,
+        meta: { layout: 'home',requiresGuest: true  },//要認証
     },
     {
         path: '*',

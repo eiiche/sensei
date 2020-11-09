@@ -3,10 +3,10 @@
         <div class="main">
             <div class="cal">
                 <div class="cal_row-label">
-                    <p class="cal_label" v-for="n in 10">{{ n + 9 }}</p>
+                    <p class="cal_label" v-for="n in 24">{{ n  }}</p>
                 </div>
                 <div class="cal_row-timeline">
-                    <div class="cal_block" v-for="n in 10"></div>
+                    <div class="cal_block" v-for="n in 24"></div>
                 </div>
             </div>
 
@@ -27,30 +27,32 @@
 <script>
     export default {
         name: "BookingSchedule",
-        data: {
-            shopOpenHour: 10,
-            calBlockHeight: 90,
-            topMargin: 20,
-            reservations: [
-                {
-                    "id": 1,
-                    "name": "予約A",
-                    "startTime": "11:00",
-                    "endTime": "11:40"
-                },
-                {
-                    "id": 2,
-                    "name": "予約B",
-                    "startTime": "12:00",
-                    "endTime": "13:30"
-                },
-                {
-                    "id": 3,
-                    "name": "予約C",
-                    "startTime": "15:10",
-                    "endTime": "17:40"
-                }
-            ]
+        data: function () {
+            return {
+                shopOpenHour: 1,
+                calBlockHeight: 90,
+                topMargin: 20,
+                reservations: [
+                    {
+                        "id": 1,
+                        "name": "予約A",
+                        "startTime": "11:00",
+                        "endTime": "11:40"
+                    },
+                    {
+                        "id": 2,
+                        "name": "予約B",
+                        "startTime": "12:00",
+                        "endTime": "13:30"
+                    },
+                    {
+                        "id": 3,
+                        "name": "予約C",
+                        "startTime": "15:10",
+                        "endTime": "17:40"
+                    }
+                ]
+            }
         },
 
         methods: {
@@ -89,9 +91,12 @@
 
     .main {
         position: relative;
-        max-width: 300px;
+        max-width: 600px;
         padding-right: 20px;
         background-color: #eee;
+        height:500px;
+        overflow: scroll;
+        margin: 0 auto;
     }
 
     .cal {

@@ -47,10 +47,26 @@
         </div>
         <b-row>
             <b-col col lg="12">
-                <div class="text-center mt-5">
-                    <h3>予約</h3>
-                    <BookingSchedule />
-
+                <div class="mt-5">
+                    <h2 class="text-center">予約状況</h2>
+                    <div>
+                        <BookingSchedule/>
+                    </div>
+                    <div class="text-center">
+                        <form @submit.prevent action="/bookconfirm" method="POST">
+                            <h3 class="text-center mt-4">希望する時間</h3>
+                            <input type="date"><input type="time">から
+                            <select name="hour">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                            時間
+                            <div>
+                                <b-button to="/bookconfirm" variant="primary">予約する</b-button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </b-col>
         </b-row>
