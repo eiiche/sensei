@@ -11,13 +11,14 @@ import HomeLayout from './layouts/HomeLayout.vue'
 
 import SwiperLayout from  './components/SwiperLayout.vue'
 import BookingSchedule from "./components/BookingSchedule";
-
+import SenseiItem from "./components/SenseiItem";
 
 import { BootstrapVue, BootstrapVueIcons } from 'bootstrap-vue'
 
 //awesome-swiperインポート
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/swiper-bundle.css'
+
 
 Vue.use(VueMeta, {
     refreshOnceOnNavigation: true,
@@ -39,8 +40,9 @@ Vue.component('DefaultLayout', DefaultLayout)
 Vue.component('ErrorLayout', ErrorLayout)
 Vue.component('HomeLayout', HomeLayout)
 
-Vue.component('SwiperLayout',SwiperLayout);
+Vue.component('SwiperLayout',SwiperLayout)
 Vue.component('BookingSchedule',BookingSchedule)
+Vue.component('SenseiItem',SenseiItem)
 
 store.dispatch('auth/setUser', window.currentUser)
 const vm = new Vue({
