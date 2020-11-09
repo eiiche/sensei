@@ -4,36 +4,21 @@
             <!--依頼一覧スライド-->
             <b-col col lg="12">
                 <div class="mt-5">
-                    <h3>申し込み中の依頼</h3>
+                    <h3>申し込み中のSENSEI</h3>
                     <!--申し込んでいる依頼一覧-->
                     <div class="border-lightgray d-inline-flex">
                         <!--アイテム-->
-                        <div class="border-lightgray display-flex-column">
+                        <div class="border-lightgray">
                             <h5>2020/10/28 18:00 から 20:00</h5>
-                            <img :src="'/images/1.png'" class="image mt-2">
-                            <h5>イラストの添削をします。</h5>
-                            <div class="d-inline-flex">
-                                <img :src="'/images/1.png'" class="thumbnail">
-                                <h5>eache</h5>
-                            </div>
+                            <SenseiItem />
                         </div>
-                        <div class="border-lightgray display-flex-column">
+                        <div class="border-lightgray">
                             <h5>2020/10/28 18:00 から 20:00</h5>
-                            <img :src="'/images/1.png'" class="image mt-2">
-                            <h5>イラストの添削をします。</h5>
-                            <div class="d-inline-flex">
-                                <img :src="'/images/1.png'" class="thumbnail">
-                                <h5>eache</h5>
-                            </div>
+                            <SenseiItem />
                         </div>
-                        <div class="border-lightgray display-flex-column">
+                        <div class="border-lightgray">
                             <h5>2020/10/28 18:00 から 20:00</h5>
-                            <img :src="'/images/1.png'" class="image mt-2">
-                            <h5>イラストの添削をします。</h5>
-                            <div class="d-inline-flex">
-                                <img :src="'/images/1.png'" class="thumbnail">
-                                <h5>eache</h5>
-                            </div>
+                            <SenseiItem />
                         </div>
                     </div>
                 </div>
@@ -44,40 +29,22 @@
                     <h3>新着のSENSEI</h3>
                     <div class="grid">
                         <div class="item">
-                            <div class="image">
-                                <img :src="'/images/1.png'" class="image">
-                            </div>
-                            <p class="desc">先生です</p>
+                            <SenseiItem />
                         </div>
                         <div class="item">
-                            <div class="image">
-                                <img :src="'/images/1.png'" class="image">
-                            </div>
-                            <p class="desc">先生です</p>
+                            <SenseiItem />
                         </div>
                         <div class="item">
-                            <div class="image">
-                                <img :src="'/images/1.png'" class="image">
-                            </div>
-                            <p class="desc">先生です</p>
+                            <SenseiItem />
                         </div>
                         <div class="item">
-                            <div class="image">
-                                <img :src="'/images/1.png'" class="image">
-                            </div>
-                            <p class="desc">先生です</p>
+                            <SenseiItem />
                         </div>
                         <div class="item">
-                            <div class="image">
-                                <img :src="'/images/1.png'" class="image">
-                            </div>
-                            <p class="desc">先生です</p>
+                            <SenseiItem />
                         </div>
                         <div class="item">
-                            <div class="image">
-                                <img :src="'/images/1.png'" class="image">
-                            </div>
-                            <p class="desc">先生です</p>
+                            <SenseiItem />
                         </div>
                     </div>
                 </div>
