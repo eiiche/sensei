@@ -54,11 +54,13 @@
                 <div class="mt-5">
                     <h3>おしらせ</h3>
                     <div class="newscontainer">
-                        <div class="news d-inline-flex">
-                            <h5>2020/10/28</h5>
-                            <h5 class="ml-3">
-                                ニュースニュースニュースニュースニュースニュースニュースニュースニュースニュースニュースニュースニュースニュースニュース
-                            </h5>
+                        <div 
+                            v-for="(item, index) in news"
+                            :key="index"
+                            class="news d-inline-flex"
+                        >
+                            <h5>{{ item.createdAt }}</h5>
+                            <h5 class="ml-3">{{ item.title }}</h5>
                         </div>
                     </div>
                 </div>
@@ -69,10 +71,22 @@
 </template>
 
 <script>
+    import axios from 'axios'
     export default {
         components: {},
         data() {
-            return {}
+            return {
+                news: []
+            }
+        },
+        created() {
+            this.fetchNews()
+        },
+        methods: {
+            async fetchNews() {
+                const news = (await axios.get(`/api/news`, { params: { limit: 5 } })).data
+                this.news = news.data
+            }
         }
     }
 </script>
