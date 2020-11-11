@@ -14,6 +14,7 @@
                         <b-nav-item to="/register">新規登録</b-nav-item>
                     </b-nav>
                     <b-card>
+                        <!-- submit イベントによってページがリロードさせなくする -->
                         <b-form @submit.prevent="onSubmit">
                             <b-form-group
                                 label="メールアドレス"
@@ -25,6 +26,7 @@
                                     type="email"
                                     required
                                 ></b-form-input>
+                                <!--エラーメッセージ表示-->
                                 <b-form-invalid-feedback :state="!formState('email')">
                                     {{ formState('email') }}
                                 </b-form-invalid-feedback>
@@ -66,17 +68,22 @@ export default {
         }
     },
     methods: {
+        //エラーがあればエラー表示
         formState(name) {
             return this.errors && this.errors[name] && 0 < this.errors[name].length
                 ? this.errors[name][0]
                 : ''
         },
+        //submit時に実行
         onSubmit() {
+            //this.$store.dispatch('xxx') でコンポーネント内でアクションをディスパッチ
             this.$store
                 .dispatch('auth/login', this.form)
                 .then(() => {
-                    this.$router.push('/')
+                    //home画面に遷移させる
+                    this.$router.push('/home')
                 })
+                //err...LoginControllerから返却されてきたレスポンス
                 .catch((err) => {
                     const response = err.response
                     const errors = response.data.errors

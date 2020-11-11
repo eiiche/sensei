@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\Auth\RegisterController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\NewsController;
@@ -19,6 +20,7 @@ use App\Http\Controllers\Api\Auth\LogoutController;
 
 Route::get('news', [NewsController::class, 'index']);
 Route::post('login', [LoginController::class, 'handle']);
+Route::post('register', [RegisterController::class, 'handle']);
 Route::group(['middleware' => 'auth'], function () {
     Route::delete('logout', [LogoutController::class, 'handle']);
 });

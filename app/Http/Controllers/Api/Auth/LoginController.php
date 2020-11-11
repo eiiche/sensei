@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 class LoginController extends Controller
 {
     protected $user;
-    
+
     public function __construct(User $user)
     {
         $this->user = $user;
@@ -19,10 +19,14 @@ class LoginController extends Controller
     public function handle(LoginRequest $request)
     {
         if (Auth::check()) {
+            //400..bad request
             return response('', 400);
         }
-        $user = $this->user->where('email', $request->email)->first();
+        //リクエストのemailと比較し該当した場合代入
+        $user = User::where('email', $request->email)->first();
+        //リクエストで入力されたパスワードと該当ユーザに紐づいたパスワードのハッシュ値が等しいかチェックする
         if (!$user || !password_verify($request->password, $user->password)) {
+            //エラーを返却
             return response([
                 'message' => 'These credentials do not match our records.',
                 'errors' => [
@@ -30,9 +34,11 @@ class LoginController extends Controller
                 ]
             ], 422);
         }
-    
+
+        //ログインさせる
         Auth::login($user);
 
+        //ユーザインスタンスを返却
         return response()->json($user);
     }
 }

@@ -47,6 +47,7 @@ class NewsController extends Controller
                 'createdAt' => Carbon::now()->subDay()->subHour(),
             ]
         ]);
+        //ページネーション。各種設定を記述してある
         return new LengthAwarePaginator(
             $collection->forPage($request->page, $perPage),
             count($collection),

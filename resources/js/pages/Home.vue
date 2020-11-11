@@ -54,11 +54,14 @@
                 <div class="mt-5">
                     <h3>おしらせ</h3>
                     <div class="newscontainer">
-                        <div 
+                        <!--v-forでnews配列内のアイテムを繰り返し表示。item...news配列の要素 index...要素の番号-->
+                        <!--v-bind:key="index"で-->
+                        <div
                             v-for="(item, index) in news"
                             :key="index"
                             class="news d-inline-flex"
                         >
+
                             <h5>{{ item.createdAt }}</h5>
                             <h5 class="ml-3">{{ item.title }}</h5>
                         </div>
@@ -79,11 +82,14 @@
                 news: []
             }
         },
+        //Vueインスタンス生成時に実行する処理を記述
         created() {
             this.fetchNews()
         },
         methods: {
             async fetchNews() {
+                //paramに変数limit = 5を代入しgetリクエスト。変数limitはコントローラ側での処理に使う
+                //api.phpに記述されたルーティングを通してコントローラにアクセス
                 const news = (await axios.get(`/api/news`, { params: { limit: 5 } })).data
                 this.news = news.data
             }
