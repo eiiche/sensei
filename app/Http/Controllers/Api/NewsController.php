@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Models\News;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -34,19 +35,9 @@ class NewsController extends Controller
      */
     private function mockNewsList(Request $request): LengthAwarePaginator
     {
+        //limitを指定しない場合は15記事表示
         $perPage = $request->limit ?? 15;
-        $collection = collect([
-            [
-                'id' => 10,
-                'title' => 'ニュースニュースニュースニュースニュースニュースニュースニュースニュースニュースニュースニュースニュースニュースニュース',
-                'createdAt' => Carbon::now(),
-            ],
-            [
-                'id' => 5,
-                'title' => 'ニュースニュースニュースニュースニュースニュースニュースニュースニュースニュースニュースニュースニュースニュースニュース',
-                'createdAt' => Carbon::now()->subDay()->subHour(),
-            ]
-        ]);
+        $collection = News::latest()->get();
         //ページネーション。各種設定を記述してある
         return new LengthAwarePaginator(
             $collection->forPage($request->page, $perPage),

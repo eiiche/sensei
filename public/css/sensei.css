@@ -20,18 +20,6 @@
     text-align: left;
 }
 
-/*おしらせ*/
-.news{
-    margin: 10px;
-    border: 2px solid;
-    border-color: #b9bbbe;
-}
-
-.newscontainer{
-    border: 2px solid;
-    border-color: #b9bbbe;
-}
-
 /*sensei一覧*/
 .sensei-item{
     display: flex;

@@ -29,37 +29,37 @@ const routes = [
         path: '/home',
         name: 'home',
         component: Home,
-        meta: { layout: 'home', requiresGuest: true },
+        meta: { layout: 'home'},
     },
     {
         path: '/list',
         name: 'list',
         component: List,
-        meta: { layout: 'home', requiresGuest: true },
+        meta: { layout: 'home'},
     },
     {
         path: '/sensei-page',
         name: 'sensei-page',
         component: SenseiPage,
-        meta: { layout: 'home', requiresGuest: true },
+        meta: { layout: 'home'},
     },
     {
         path: '/talkroom',
         name: 'talkroom',
         component: Talkroom,
-        meta: { layout: 'home', requiresGuest: true },//要認証
+        meta: { layout: 'home', requiresAuth: true },//要認証
     },
     {
         path: '/',
         name: 'top',
         component: Top,
-        meta: { layout: 'home',requiresAuth: true  },
+        meta: { layout: 'home'},
     },
     {
         path: '/bookconfirm',
         name: 'bookconfirm',
         component: BookConfirm,
-        meta: { layout: 'home',requiresGuest: true  },//要認証
+        meta: { layout: 'home',requiresAuth: true  },//要認証
     },
     {
         path: '*',

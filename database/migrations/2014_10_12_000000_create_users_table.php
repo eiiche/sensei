@@ -19,11 +19,12 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->boolean('flg')->default(0);//SENSEI or SEITO
+            $table->string('profile_text')->nullable();//プロフ文
             $table->rememberToken();
             $table->timestamps();
             //追加分
             $table->string('icon')->nullable();//プロフアイコン
-            $table->string('profile_text')->nullable();//プロフ文
         });
     }
 
