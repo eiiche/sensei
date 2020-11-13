@@ -1,32 +1,52 @@
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
+import Vue from 'vue'
+import VueMeta from 'vue-meta'
+import router from './router'
+import App from './App.vue'
+import store from './store'
+import VCalendar from 'v-calendar';
 
-require('./bootstrap');
+import DefaultLayout from './layouts/DefaultLayout.vue'
+import ErrorLayout from './layouts/ErrorLayout.vue'
+import HomeLayout from './layouts/HomeLayout.vue'
 
-window.Vue = require('vue');
+import SwiperLayout from  './components/SwiperLayout.vue'
+import BookingSchedule from "./components/BookingSchedule";
+import SenseiItem from "./components/SenseiItem";
 
-/**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
- *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
- */
+import { BootstrapVue, BootstrapVueIcons } from 'bootstrap-vue'
 
-// const files = require.context('./', true, /\.vue$/i)
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
+//awesome-swiperインポート
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+import 'swiper/swiper-bundle.css'
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
+Vue.use(VueMeta, {
+    refreshOnceOnNavigation: true,
+})
 
-const app = new Vue({
-    el: '#app',
+Vue.use(BootstrapVue)
+Vue.use(BootstrapVueIcons)
+
+
+// Use v-calendar & v-date-picker components
+Vue.use(VCalendar, {
+    componentPrefix: 'vc',  // Use <vc-calendar /> instead of <v-calendar />
 });
+
+// //Swiperコンポーネント登録
+Vue.use(VueAwesomeSwiper, /*     { default options with global component } */)
+
+Vue.component('DefaultLayout', DefaultLayout)
+Vue.component('ErrorLayout', ErrorLayout)
+Vue.component('HomeLayout', HomeLayout)
+
+Vue.component('SwiperLayout',SwiperLayout)
+Vue.component('BookingSchedule',BookingSchedule)
+Vue.component('SenseiItem',SenseiItem)
+
+store.dispatch('auth/setUser', window.currentUser)
+const vm = new Vue({
+    router,
+    store,
+    render: (h) => h(App),
+}).$mount('#app')
