@@ -19,12 +19,11 @@ use App\Http\Controllers\FrontendController;
 
 // Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Route::get('/sensei',function (){
-    return view("sensei\welcome");
-});
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//
+//Route::get('/sensei',function (){
+//    return view("sensei\welcome");
+//});
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::any('/{any}', [FrontendController::class, 'app'])->where('any', '^(?!api).*$');
-

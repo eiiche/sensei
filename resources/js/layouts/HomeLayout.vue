@@ -18,6 +18,7 @@
                     </template>
                     <b-dropdown-item  to="/login">ログイン</b-dropdown-item>
                     <b-dropdown-item to="/register">登録</b-dropdown-item>
+                    <b-dropdown-item to="/logout">ログアウト</b-dropdown-item>
                 </b-nav-item-dropdown>
             </b-container>
         </b-navbar>

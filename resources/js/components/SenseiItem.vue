@@ -2,13 +2,13 @@
     <div class="border-lightgray display-flex-column">
         <div v-for="(item, index) in users"
              :key="index">
-            <img :src="'/images/1.png'" class="image mt-2">
-            <h5>イラストの添削をします。</h5>
+            <img :src="item.image.image" class="image mt-2">
+            <h5>{{item.profile_text}}</h5>
             <div class="d-inline-flex">
                 <img :src="'/images/1.png'" class="thumbnail">
                 <div>
                     <h5>{{item.name}}</h5>
-                    <p>イラスト/モデリング</p>
+                    <p>{{item.tag.tag}}</p>
                 </div>
             </div>
         </div>
@@ -17,12 +17,11 @@
 
 <script>
     import axios from 'axios'
-
     export default {
         name: "SenseiItem",
         data() {
             return {
-                user: []
+                users: [],
             }
         },
         //読み込み時に実行させておきたいのでcreatedに記述
@@ -39,6 +38,4 @@
     }
 </script>
 
-<style scoped>
 
-</style>

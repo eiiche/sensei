@@ -31,21 +31,6 @@
                         <div class="item">
                             <SenseiItem />
                         </div>
-                        <div class="item">
-                            <SenseiItem />
-                        </div>
-                        <div class="item">
-                            <SenseiItem />
-                        </div>
-                        <div class="item">
-                            <SenseiItem />
-                        </div>
-                        <div class="item">
-                            <SenseiItem />
-                        </div>
-                        <div class="item">
-                            <SenseiItem />
-                        </div>
                     </div>
                 </div>
             </b-col>
@@ -58,10 +43,8 @@
                         <!--v-bind:key="index"で-->
                         <div
                             v-for="(item, index) in news"
-                            :key="index"
-                            class=""
-                        >
-                            <h5>{{ item.created_at }}</h5>
+                            :key="index">
+                            <h5>{{ item.created_at}}</h5>
                             <h5 class="ml-3">{{ item.title }}</h5>
                         </div>
                     </div>

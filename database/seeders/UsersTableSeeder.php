@@ -20,7 +20,7 @@ class UsersTableSeeder extends Seeder
             'name' => "user1",
             'email' => 'user@test.com',
             'password' => Hash::make('usertest'),//パスワードはハッシュ化
-            'icon' => '',
+            'icon' => '/img/1.png',
             'profile_text' => 'プロフィールです',
             "created_at" => new DateTime(),
             "updated_at" => new DateTime()
@@ -31,7 +31,7 @@ class UsersTableSeeder extends Seeder
             'name' => "user2",
             'email' => 'user2@test.com',
             'password' => Hash::make('usertest'),//パスワードはハッシュ化
-            'icon' => '',
+            'icon' => '/img/1.png',
             'profile_text' => 'プロフィールです',
             "created_at" => new DateTime(),
             "updated_at" => new DateTime()
@@ -42,7 +42,7 @@ class UsersTableSeeder extends Seeder
             'name' => "user3",
             'email' => 'user3@test.com',
             'password' => Hash::make('usertest'),//パスワードはハッシュ化
-            'icon' => '',
+            'icon' => '/img/1.png',
             'profile_text' => '先生です',
             'flg' => 1,//senseiにセット
             "created_at" => new DateTime(),

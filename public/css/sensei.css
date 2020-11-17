@@ -11,9 +11,8 @@
     border-color: #b9bbbe;
 }
 .image {
-    width: 250px;
-    height: 250px;
-
+    height: 200px;
+    object-fit: cover;
 }
 
 .desc {
@@ -21,10 +20,6 @@
 }
 
 /*sensei一覧*/
-.sensei-item{
-    display: flex;
-    flex-direction: column;
-}
 .thumbnail{
     height: 50px;
     width: 50px;

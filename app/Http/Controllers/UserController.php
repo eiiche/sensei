@@ -30,7 +30,8 @@ class UserController extends Controller
     //最新6件取得
     public function getLatestUsers(){
         $perpage = 6;
-        $users = User::where('flg',1)->paginate($perpage);
+        $users = User::where('flg',1)->orderBy('created_at','ASC')->take($perpage)->get();
+
         response()->json($users);
     }
 

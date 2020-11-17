@@ -18,7 +18,8 @@ class DatabaseSeeder extends Seeder
             UsersTableSeeder::class,
             TagsTableSeeder::class,
             UsersTagsTableSeeder::class,
-            ReservationTableSeeder::class
+            ReservationTableSeeder::class,
+            ImagesTableSeeder::class,
         ]);
     }
 }

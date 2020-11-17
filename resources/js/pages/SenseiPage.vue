@@ -1,39 +1,43 @@
 <template>
     <b-container>
-        <b-row>
-            <b-col col lg="12">
+        <b-row class="border-lightgray">
+            <b-col col lg="3">
                 <!--プロフ-->
-                <div class="d-inline-flex border-lightgray w-100 mt-5 h-auto">
+                <div class="d-inline-flex border-lightgray">
                     <div class="border-lightgray">
-                        <img :src="'/images/1.png'" class="rounded-circle w-50 h-50">
+                        <h3>プロフィール</h3>
+                        <!-- v-vind:src -->
+                        <img :src="pfImage" class="rounded-circle image">
                         <h4>タグ</h4>
                         <h5>イラスト/モデリング</h5>
                         <h5>★★★★★(100)</h5>
                         <h4>SENSEIの一言:</h4>
-                        <h5>がんばります</h5>
+                        <p>がんばります</p>
                     </div>
-                    <div class="sensei-detail display-flex-column pt-2">
-                        <h3>評価</h3>
-                        <div class="pt-2">
-                            <div class="display-flex-row">
-                                <div class="display-flex-column">
-                                    <img :src="'/images/1.png'" class="thumbnail rounded-circle">
-                                    <h3>eache</h3>
-                                </div>
-                                <h5 class="ml-4">大変良いです</h5>
+                </div>
+            </b-col>
+            <b-col col lg="7">
+                <div class="sensei-detail display-flex-column pt-2">
+                    <h3>評価</h3>
+                    <div class="pt-2">
+                        <div class="display-flex-row">
+                            <div class="display-flex-column">
+                                <img :src="'/images/1.png'" class="thumbnail rounded-circle">
+                                <h3>eache</h3>
                             </div>
+                            <p class="ml-4">大変良いです</p>
                         </div>
                     </div>
                 </div>
             </b-col>
+        </b-row>
+        <b-row>
             <b-col>
                 <div class="mt-5">
                     <h3>ポートフォリオ</h3>
                     <SwiperLayout></SwiperLayout>
                 </div>
             </b-col>
-        </b-row>
-        <b-row>
         </b-row>
         <b-row>
             <b-col col lg="12">
