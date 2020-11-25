@@ -8,7 +8,7 @@
                 <img :src="'/images/1.png'" class="thumbnail">
                 <div>
                     <h5>{{item.name}}</h5>
-                    <p>{{item.tag.tag}}</p>
+<!--                    <p>{{item.tag.tag}}</p>-->
                 </div>
             </div>
         </div>
@@ -32,7 +32,8 @@
             //async..非同期
             async fetchUser() {
                 const users = (await axios.get(`/api/users_latest`)).data
-                this.users = users.data
+                this.users = users
+                console.log(users)
             }
         }
     }
