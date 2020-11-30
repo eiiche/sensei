@@ -1,10 +1,9 @@
 <template>
     <swiper ref="mySwiper" :options="swiperOptions">
-        <swiper-slide><img :src="'/images/1.png'" class="image"></swiper-slide>
-        <swiper-slide><img :src="'/images/1.png'" class="image"></swiper-slide>
-        <swiper-slide><img :src="'/images/1.png'" class="image"></swiper-slide>
-        <swiper-slide><img :src="'/images/1.png'" class="image"></swiper-slide>
-        <swiper-slide><img :src="'/images/1.png'" class="image"></swiper-slide>
+        <div v-for="(image, index) in images"
+             :key="index">
+            <swiper-slide><img :src="image.image" class="image"></swiper-slide>
+        </div>
         <div class="swiper-pagination" slot="pagination"></div>
         <div class="swiper-button-prev" slot="button-prev"></div>
         <div class="swiper-button-next" slot="button-next"></div>
@@ -14,6 +13,9 @@
 <script>
     export default {
         name: 'carrousel',
+        props: [
+            'images'
+        ],
         data() {
             return {
                 swiperOptions: {

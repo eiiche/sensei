@@ -12,6 +12,7 @@ import HomeLayout from './layouts/HomeLayout.vue'
 import SwiperLayout from  './components/SwiperLayout.vue'
 import BookingSchedule from "./components/BookingSchedule";
 import SenseiItem from "./components/SenseiItem";
+import SenseiItemWide from "./components/SenseiItemWide";
 
 import { BootstrapVue, BootstrapVueIcons } from 'bootstrap-vue'
 
@@ -43,6 +44,7 @@ Vue.component('HomeLayout', HomeLayout)
 Vue.component('SwiperLayout',SwiperLayout)
 Vue.component('BookingSchedule',BookingSchedule)
 Vue.component('SenseiItem',SenseiItem)
+Vue.component('SenseiItemWide',SenseiItemWide)
 
 store.dispatch('auth/setUser', window.currentUser)
 const vm = new Vue({

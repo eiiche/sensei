@@ -23,5 +23,12 @@ class TagsTableSeeder extends Seeder
             "updated_at" => new DateTime()
         ];
         DB::table("tags")->insert($param);
+
+        $param = [
+            'tag' => 'キャラクターデザイン',
+            "created_at" => new DateTime(),
+            "updated_at" => new DateTime()
+        ];
+        DB::table("tags")->insert($param);
     }
 }

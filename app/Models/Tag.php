@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Tag extends Model
 {
     use HasFactory;
+    public function users(){
+        return $this->belongsToMany(User::class,'user_tag');//複数のユーザに所属
+    }
 }

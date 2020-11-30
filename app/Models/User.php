@@ -49,4 +49,8 @@ class User extends Authenticatable
     {
         return $this->hasMany(Image::class);
     }
+
+    public function tags(){
+        return $this->belongsToMany(Tag::class,'user_tag');//複数のタグに所属
+    }
 }

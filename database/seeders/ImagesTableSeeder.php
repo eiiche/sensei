@@ -17,7 +17,7 @@ class ImagesTableSeeder extends Seeder
     public function run()
     {
         $param = [
-            'image' => "/img/1.png",
+            'image' => "/storage/1.png",
             'user_id' => User::where('email','user3@test.com')->first()->id,
             "created_at" => new DateTime(),
             "updated_at" => new DateTime()
@@ -25,7 +25,7 @@ class ImagesTableSeeder extends Seeder
         DB::table("images")->insert($param);
 
         $param = [
-            'image' => "/img/2.png",
+            'image' => "/storage/2.png",
             'user_id' => User::where('email','user3@test.com')->first()->id,
             "created_at" => new DateTime(),
             "updated_at" => new DateTime()

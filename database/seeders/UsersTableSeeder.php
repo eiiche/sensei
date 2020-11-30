@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Reservation;
 use DateTime;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -20,7 +21,7 @@ class UsersTableSeeder extends Seeder
             'name' => "user1",
             'email' => 'user@test.com',
             'password' => Hash::make('usertest'),//パスワードはハッシュ化
-            'icon' => '/img/1.png',
+            'icon' => '/storage/1.png',
             'profile_text' => 'プロフィールです',
             "created_at" => new DateTime(),
             "updated_at" => new DateTime()
@@ -31,7 +32,7 @@ class UsersTableSeeder extends Seeder
             'name' => "user2",
             'email' => 'user2@test.com',
             'password' => Hash::make('usertest'),//パスワードはハッシュ化
-            'icon' => '/img/1.png',
+            'icon' => '/storage/1.png',
             'profile_text' => 'プロフィールです',
             "created_at" => new DateTime(),
             "updated_at" => new DateTime()
@@ -42,9 +43,11 @@ class UsersTableSeeder extends Seeder
             'name' => "user3",
             'email' => 'user3@test.com',
             'password' => Hash::make('usertest'),//パスワードはハッシュ化
-            'icon' => '/img/1.png',
+            'icon' => '/storage/1.png',
             'profile_text' => '先生です',
             'flg' => 1,//senseiにセット
+            'price' => 1000,
+            'rating' => 3.5,
             "created_at" => new DateTime(),
             "updated_at" => new DateTime()
         ];

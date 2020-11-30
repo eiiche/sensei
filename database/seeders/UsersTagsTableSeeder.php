@@ -23,6 +23,14 @@ class UsersTagsTableSeeder extends Seeder
             "created_at" => new DateTime(),
             "updated_at" => new DateTime()
         ];
-        DB::table("users_tags")->insert($param);
+        DB::table("user_tag")->insert($param);
+
+        $param = [
+            'user_id' => User::where('email','user3@test.com')->first()->id,
+            'tag_id' => Tag::where('tag','キャラクターデザイン')->first()->id,
+            "created_at" => new DateTime(),
+            "updated_at" => new DateTime()
+        ];
+        DB::table("user_tag")->insert($param);
     }
 }

@@ -19,6 +19,8 @@ class CreateReservationTable extends Migration
             $table->unsignedInteger('seito_id');
             $table->dateTime('schedule');//予約日時
             $table->double('hour');//学習時間
+            $table->string('review_text')->nullable();
+            $table->double('rating')->nullable();
             $table->timestamps();
 
             //外部キー制約。

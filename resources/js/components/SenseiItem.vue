@@ -1,14 +1,17 @@
 <template>
     <div class="border-lightgray display-flex-column">
-        <div v-for="(item, index) in users"
+        <div v-for="(user, index) in users"
              :key="index">
-            <img :src="item.image.image" class="image mt-2">
-            <h5>{{item.profile_text}}</h5>
+            <img :src="user.images[0].image" class="image mt-2">
+            <h5>{{user.profile_text}}</h5>
             <div class="d-inline-flex">
-                <img :src="'/images/1.png'" class="thumbnail">
+                <img :src="user.icon" class="thumbnail">
                 <div>
-                    <h5>{{item.name}}</h5>
-<!--                    <p>{{item.tag.tag}}</p>-->
+                    <h5>{{user.name}}</h5>
+                    <div v-for="(tag, index) in user.tags"
+                         :key="tag.id">
+                        <p>{{tag.tag}}</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -31,7 +34,7 @@
         methods: {
             //async..非同期
             async fetchUser() {
-                const users = (await axios.get(`/api/users_latest`)).data
+                const users = (await axios.get(`/api/sensei_latest`)).data
                 this.users = users
                 console.log(users)
             }

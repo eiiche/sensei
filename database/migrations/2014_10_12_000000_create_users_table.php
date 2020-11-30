@@ -24,6 +24,8 @@ class CreateUsersTable extends Migration
             //追加分
             $table->boolean('flg')->default(0);//SENSEI or SEITO
             $table->string('profile_text')->nullable();//プロフ文
+            $table->integer('price')->nullable();//価格
+            $table->boolean('rating')->nullable();//評価
             $table->string('icon')->nullable();//プロフアイコン
         });
     }
@@ -36,6 +38,7 @@ class CreateUsersTable extends Migration
     public function down()
     {
         Schema::dropIfExists('users');
+        Schema::dropIfExists('user_tag');
         Schema::dropIfExists('images');
         Schema::dropIfExists('tags');
     }

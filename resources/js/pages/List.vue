@@ -24,27 +24,7 @@
             <b-col col lg="12">
                 <!--一覧-->
                 <div class="list mt-5">
-                    <div class="sensei-item border-lightgray">
-                        <div class="content1 pl-3">
-                            <img :src="'/images/1.png'" class="thumbnail">
-                            <h3>name</h3>
-                            <div class="achievement">
-                                <h3>添削数:1</h3>
-                                <h3>★★★★★</h3>
-                            </div>
-                        </div>
-                        <div class="content2">
-                           <!--カルーセル-->
-                            <SwiperLayout></SwiperLayout>
-                        </div>
-                        <div class="content3 pl-3">
-                            <h3>がんばります。</h3>
-                        </div>
-                        <div class="booking text-center">
-                            <h3>価格:100円</h3>
-                            <b-button to="/sensei-page" variant="primary">予約する</b-button>
-                        </div>
-                    </div>
+                    <SenseiItemWide />
                 </div>
 
             </b-col>
@@ -58,10 +38,13 @@
 </template>
 
 <script>
+    import axios from "axios";
+
     export default {
         components: {},
         data() {
             return {}
-        }
+        },
+
     }
 </script>

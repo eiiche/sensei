@@ -6,7 +6,6 @@
 }
 .item {
     padding: 15px;
-    text-align: center;
     border: 2px solid;
     border-color: #b9bbbe;
 }
@@ -37,21 +36,6 @@
     background-color: #e2e6ea;
 }
 
-.content1{
-    display: flex;
-    flex-direction: row;
-}
-.achievement{
-    display: flex;
-    flex-direction: column;
-    margin-left: auto;
-}
-.content2{
-
-}
-.content3{
-    text-align: left;
-}
 .display-flex-column{
     display: flex;
     flex-direction: column;

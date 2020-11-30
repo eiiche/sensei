@@ -20,7 +20,7 @@ use App\Http\Controllers\Api\Auth\LogoutController;
 */
 
 Route::get('news', [NewsController::class, 'index']);
-Route::get('users_latest', [UserController::class, 'getLatestUsers']);
+Route::get('sensei_latest', [UserController::class, 'getLatestSensei']);
 Route::post('login', [LoginController::class, 'handle']);
 Route::post('register', [RegisterController::class, 'handle']);
 Route::group(['middleware' => 'auth'], function () {
