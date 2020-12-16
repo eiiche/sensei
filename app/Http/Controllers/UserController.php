@@ -34,6 +34,11 @@ class UserController extends Controller
         return response()->json($users);
     }
 
+    public function getSensei(Request $request){
+        $user = User::find($request->userId)->with('images')->with('tags');
+        return response()->json($user);
+    }
+
     /**
      * Store a newly created resource in storage.
      *

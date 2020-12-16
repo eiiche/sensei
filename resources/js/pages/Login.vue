@@ -73,7 +73,7 @@
             },
             onSubmit() {
                 this.$store
-                    .dispatch('auth/login', this.form)
+                    .dispatch('auth/login', this.form)//vuex,action実行
                     .then(() => {
                         this.$router.push('/')
                     })

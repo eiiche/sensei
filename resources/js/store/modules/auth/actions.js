@@ -1,3 +1,5 @@
+//アクション。処理の公開や複雑な処理を行う(いわゆるpublicなメソッド)
+
 import axios from 'axios'
 
 const actions = {

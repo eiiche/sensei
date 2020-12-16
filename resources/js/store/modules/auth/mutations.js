@@ -1,3 +1,5 @@
+//ミューテーション。ステートを更新する役割。いわゆるセッター
+
 const mutations = {
     SET_USER: (state, user) => {
         state.user = user

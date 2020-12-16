@@ -6,6 +6,7 @@
                 <div class="d-inline-flex border-lightgray">
                     <div class="border-lightgray">
                         <h3>プロフィール</h3>
+                        <h3>{{user.name}}</h3>
                         <!-- v-vind:src -->
                         <img :src="pfImage" class="rounded-circle image">
                         <h4>タグ</h4>
@@ -51,10 +52,30 @@
 </template>
 
 <script>
+    import axios from "axios";
+
     export default {
         components: {},
         data() {
-            return {}
+            return {
+                userId: this.$route.params.id,//urlパラメータのid
+                user: null,//アクションで取得したuserオブジェクト
+            }
+        },
+        watch: {
+            $route(to, from) {
+                this.userId = to.params.id//urlパラメータのidを格納
+                this.user = this.fetchUser()//アクションで取得したuserオブジェクトを格納
+            },
+        },
+        created() {
+            this.fetchUser()
+        },
+        methods: {
+            //async..非同期
+            fetchUser() {//先生取得
+                return this.$store.dispatch('sensei/fetchUser', { id: this.userId })//dispatchでアクション呼び出し。引数userId
+            },
         }
     }
 </script>

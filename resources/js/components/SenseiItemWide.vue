@@ -25,10 +25,7 @@
             </div>
             <div class="booking text-center">
                 <h3>{{user.price}}円/30分</h3>
-                <form @submit.prevent="onSubmit" method="post">
-                    <input type="hidden" name="sensei_id" value="user.id">
-                    <b-button type="submit" variant="primary">予約する</b-button>
-                </form>
+                <router-link :to="`/sensei_page/${user.id}`">予約する</router-link>
             </div>
         </div>
     </div>
@@ -42,6 +39,7 @@
         data() {
             return {
                 users: [],
+                senseiPath : "/sensei_page/"
             }
         },
         //読み込み時に実行させておきたいのでcreatedに記述
@@ -54,20 +52,6 @@
                 const users = (await axios.get(`/api/sensei_latest`)).data
                 this.users = users
                 console.log(users)
-            },
-            onSubmit() {
-                this.$store
-                    .dispatch('api/', this.form)
-                    .then(() => {
-                        this.$router.push('/SenseiPage')
-                    })
-                    .catch((err) => {
-                        const response = err.response
-                        const errors = response.data.errors
-                        if (errors) {
-                            this.errors = errors
-                        }
-                    })
             },
         }
     }

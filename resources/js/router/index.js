@@ -38,10 +38,10 @@ const routes = [
         meta: { layout: 'home'},
     },
     {
-        path: '/sensei-page',
-        name: 'sensei-page',
+        path: '/sensei_page/:username',
+        name: 'sensei_page',
         component: SenseiPage,
-        meta: { layout: 'home'},
+        meta: { layout: 'home' },
     },
     {
         path: '/talkroom',
@@ -65,6 +65,7 @@ const routes = [
         path: '*',
         meta: { layout: 'error', error: 404 },
     },
+
 ]
 
 const router = new VueRouter({
