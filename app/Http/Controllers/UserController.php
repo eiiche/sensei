@@ -34,8 +34,10 @@ class UserController extends Controller
         return response()->json($users);
     }
 
-    public function getSensei(Request $request){
-        $user = User::find($request->userId)->with('images')->with('tags');
+    public function getUserById(Request $request){
+        clock()->info("user is {$request->id}");
+        $user = User::find($request->id)->with('images')->with('tags');
+        clock()->info("user is {$user}");
         return response()->json($user);
     }
 

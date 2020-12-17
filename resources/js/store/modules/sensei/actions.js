@@ -4,7 +4,12 @@ import axios from 'axios'
 
 const actions = {
     fetchUser: async ({ commit, state }, { id }) => {//ビューからの呼び出しで引数にuserIdを受け取る
-        const response = await axios.get('/api/sensei_page', { params: { id: id } })//コントローラにuserIdを渡してユーザ取得
+        console.log("actionは",id)
+        const response = await axios.get('/api/sensei_page',{
+            params: {
+                id: id
+            }
+        })//コントローラにuserIdを渡してユーザ取得
         commit('SET_USER', response.data.user)//ミューテーション'SET_USER'を経由してステートにセット
         return response.data.user //取得したユーザを返却
     },

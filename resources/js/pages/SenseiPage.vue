@@ -58,23 +58,25 @@
         components: {},
         data() {
             return {
-                userId: this.$route.params.id,//urlパラメータのid
-                user: null,//アクションで取得したuserオブジェクト
+                senseiId: this.$route.params.id,//urlパラメータのid
+                sensei: null,//アクションで取得したuserオブジェクト
             }
         },
-        watch: {
-            $route(to, from) {
-                this.userId = to.params.id//urlパラメータのidを格納
-                this.user = this.fetchUser()//アクションで取得したuserオブジェクトを格納
+        watch: {//データの変更を監視して、それをトリガーに非同期処理や複雑な処理を行うプロパティ
+            $route(to, from) {//同じコンポーネントでパラメーター変更を検知するために$route オブジェクトを watchしている。
+                this.senseiId = to.params.id//urlパラメータのidを格納
+                console.log("route",this.senseiId)
+                this.sensei = this.fetchUser()//アクションで取得したuserオブジェクトを格納
             },
         },
-        created() {
-            this.fetchUser()
+        async created() {
+            this.sensei = await this.fetchUser()
         },
         methods: {
             //async..非同期
             fetchUser() {//先生取得
-                return this.$store.dispatch('sensei/fetchUser', { id: this.userId })//dispatchでアクション呼び出し。引数userId
+                console.log("fetchuser",this.senseiId)
+                return this.$store.dispatch('sensei/fetchUser', { id: this.senseiId })//dispatchでアクション呼び出し。引数userId
             },
         }
     }

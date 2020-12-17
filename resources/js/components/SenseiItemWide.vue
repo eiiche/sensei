@@ -49,9 +49,7 @@
         methods: {
             //async..非同期
             async fetchUser() {
-                const users = (await axios.get(`/api/sensei_latest`)).data
-                this.users = users
-                console.log(users)
+                this.users = (await axios.get(`/api/sensei_latest`)).data
             },
         }
     }
