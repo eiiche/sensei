@@ -6,7 +6,7 @@
                 <div class="d-inline-flex border-lightgray">
                     <div class="border-lightgray">
                         <h3>プロフィール</h3>
-                        <h3>{{user.name}}</h3>
+                        <h3>{{sensei.name}}</h3>
                         <!-- v-vind:src -->
                         <img :src="pfImage" class="rounded-circle image">
                         <h4>タグ</h4>
