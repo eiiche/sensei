@@ -31,5 +31,21 @@ class ImagesTableSeeder extends Seeder
             "updated_at" => new DateTime()
         ];
         DB::table("images")->insert($param);
+
+        $param = [
+            'image' => "/storage/4.png",
+            'user_id' => User::where('email','user4@test.com')->first()->id,
+            "created_at" => new DateTime(),
+            "updated_at" => new DateTime()
+        ];
+        DB::table("images")->insert($param);
+
+        $param = [
+            'image' => "/storage/5.png",
+            'user_id' => User::where('email','user4@test.com')->first()->id,
+            "created_at" => new DateTime(),
+            "updated_at" => new DateTime()
+        ];
+        DB::table("images")->insert($param);
     }
 }

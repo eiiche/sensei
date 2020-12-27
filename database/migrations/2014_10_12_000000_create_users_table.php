@@ -21,7 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
-            //追加分
+            //追加分。sensei
             $table->boolean('flg')->default(0);//SENSEI or SEITO
             $table->string('profile_text')->nullable();//プロフ文
             $table->integer('price')->nullable();//価格

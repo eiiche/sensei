@@ -8,12 +8,14 @@
                         <h3>プロフィール</h3>
                         <h3>{{sensei.name}}</h3>
                         <!-- v-vind:src -->
-                        <img :src="pfImage" class="rounded-circle image">
+                        <img :src="sensei.icon" class="rounded-circle image">
                         <h4>タグ</h4>
-                        <h5>イラスト/モデリング</h5>
-                        <h5>★★★★★(100)</h5>
+                        <div class="d-inline-flex" v-for="(tag,index) in sensei.tags" :key="index">
+                            {{tag.tag}},
+                        </div>
+                        <h5>{{sensei.rating}}</h5>
                         <h4>SENSEIの一言:</h4>
-                        <p>がんばります</p>
+                        <p>{{sensei.profile_text}}</p>
                     </div>
                 </div>
             </b-col>
@@ -21,9 +23,9 @@
                 <div class="sensei-detail display-flex-column pt-2">
                     <h3>評価</h3>
                     <div class="pt-2">
-                        <div class="display-flex-row">
+                        <div class="display-flex-row" v-for="(item,index) in sensei.reservation" :key="index">
                             <div class="display-flex-column">
-                                <img :src="'/images/1.png'" class="thumbnail rounded-circle">
+                                <img :src="sensei.reservations.users.icon" class="thumbnail rounded-circle">
                                 <h3>eache</h3>
                             </div>
                             <p class="ml-4">大変良いです</p>
@@ -36,7 +38,7 @@
             <b-col>
                 <div class="mt-5">
                     <h3>ポートフォリオ</h3>
-                    <SwiperLayout></SwiperLayout>
+                    <SwiperLayout v-bind:images="sensei.images"></SwiperLayout>
                 </div>
             </b-col>
         </b-row>

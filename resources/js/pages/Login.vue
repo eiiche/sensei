@@ -75,7 +75,7 @@
                 this.$store
                     .dispatch('auth/login', this.form)//vuex,action実行
                     .then(() => {
-                        this.$router.push('/')
+                        this.$router.push('/home')
                     })
                     .catch((err) => {
                         const response = err.response

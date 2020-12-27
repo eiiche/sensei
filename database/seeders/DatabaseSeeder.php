@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Stripe\Review;
 
 class DatabaseSeeder extends Seeder
 {
@@ -18,7 +19,8 @@ class DatabaseSeeder extends Seeder
             UsersTableSeeder::class,
             TagsTableSeeder::class,
             UsersTagsTableSeeder::class,
-            ReservationTableSeeder::class,
+            ReservationsTableSeeder::class,
+            ReviewsTableSeeder::class,
             ImagesTableSeeder::class,
         ]);
     }

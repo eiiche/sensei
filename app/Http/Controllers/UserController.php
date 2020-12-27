@@ -36,8 +36,8 @@ class UserController extends Controller
 
     public function getUserById(Request $request){
         clock()->info("user is {$request->id}");
-        $user = User::find($request->id)->with('images')->with('tags');
-        clock()->info("user is {$user}");
+        $user = User::with('images', 'tags','sensei_reservations','sensei_reservations.reviews')->find($request->id);//withは最初に記述。条件は後
+        clock($user);
         return response()->json($user);
     }
 

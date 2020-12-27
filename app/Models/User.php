@@ -53,4 +53,21 @@ class User extends Authenticatable
     public function tags(){
         return $this->belongsToMany(Tag::class,'user_tag');//複数のタグに所属
     }
+
+    /**
+     * 先生に予約した場合のリレーション（生徒として予約したもの）
+     * 予約した先生の予約一覧を取得するときに利用する
+     */
+    public function sensei_reservations()
+    {
+        return $this->hasMany(Reservation::class, 'seito_id', 'id');
+    }
+    /**
+     * 生徒に予約された場合のリレーション（生徒として予約したもの）
+     * 生徒の予約一覧を取得するときとかに利用する
+     */
+    public function seito_reservations()
+    {
+        return $this->hasMany(Reservation::class, 'sensei_id', 'id');
+    }
 }

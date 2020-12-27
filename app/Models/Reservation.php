@@ -25,4 +25,8 @@ class Reservation extends Model
         'rating'
 
     ];
+
+    public function review(){
+        return $this->hasOne(Reviews::class);
+    }
 }

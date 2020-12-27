@@ -18,6 +18,17 @@ class CreateUserTagTable extends Migration
             $table->unsignedInteger("user_id");
             $table->unsignedInteger("tag_id");
             $table->timestamps();
+
+            //外部キー制約。
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users')
+                ->onDelete('cascade');
+            //外部キー制約。
+            $table->foreign('tag_id')
+                ->references('id')
+                ->on('tags')
+                ->onDelete('cascade');
         });
     }
 

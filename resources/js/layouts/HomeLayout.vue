@@ -13,7 +13,7 @@
                     <template #button-content>
                         <span>
                             <img :src="'/images/1.png'" class="thumbnail">
-                            <em class="text-white">ユーザー名</em>
+                            <em class="text-white">{{user.name}}</em>
                         </span>
                     </template>
                     <b-dropdown-item  to="/login">ログイン</b-dropdown-item>
@@ -29,5 +29,28 @@
 </template>
 
 <script>
-    export default {}
+    export default {
+        components: {},
+        data() {
+            return {
+                user : null
+            }
+        },
+        methods: {
+            onSubmit() {
+                this.$store
+                    .dispatch('auth/login', this.form)//vuex,action実行
+                    .then(() => {
+                        this.$router.push('/home')
+                    })
+                    .catch((err) => {
+                        const response = err.response
+                        const errors = response.data.errors
+                        if (errors) {
+                            this.errors = errors
+                        }
+                    })
+            },
+        },
+    }
 </script>

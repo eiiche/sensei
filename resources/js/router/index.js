@@ -38,7 +38,7 @@ const routes = [
         meta: { layout: 'home'},
     },
     {
-        path: '/sensei_page/:username',
+        path: '/sensei_page/:id',
         name: 'sensei_page',
         component: SenseiPage,
         meta: { layout: 'home' },
