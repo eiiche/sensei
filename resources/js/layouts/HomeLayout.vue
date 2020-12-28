@@ -51,6 +51,11 @@
                         }
                     })
             },
+            getUser(){
+                this.$store
+                    .dispatch('auth/getter')
+
+            }
         },
     }
 </script>

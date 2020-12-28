@@ -41,5 +41,6 @@ class CreateUsersTable extends Migration
         Schema::dropIfExists('user_tag');
         Schema::dropIfExists('images');
         Schema::dropIfExists('tags');
+        Schema::dropIfExists('reviews');
     }
 }
