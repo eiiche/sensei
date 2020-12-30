@@ -17,13 +17,22 @@ class ReviewsTableSeeder extends Seeder
     public function run()
     {
 
-    $param = [
-        'rating' => 3.5,
-        'review_text' => 'よかったです。',
-        'reservation_id' => '1',
-        "created_at" => new DateTime(),
-        "updated_at" => new DateTime(),
-    ];
+        $param = [
+            'rating' => 3,
+            'review_text' => 'よかったです。',
+            'reservation_id' => '1',
+            "created_at" => new DateTime(),
+            "updated_at" => new DateTime(),
+        ];
+        DB::table("reviews")->insert($param);
+
+        $param = [
+            'rating' => 4,
+            'review_text' => 'かなりよかったです。',
+            'reservation_id' => '2',
+            "created_at" => new DateTime(),
+            "updated_at" => new DateTime(),
+        ];
         DB::table("reviews")->insert($param);
     }
 }

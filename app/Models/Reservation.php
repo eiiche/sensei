@@ -29,4 +29,14 @@ class Reservation extends Model
     public function review(){
         return $this->hasOne(Reviews::class);
     }
+
+    //予約からユーザを取得できるようにリレーション
+    public function sensei()
+    {
+        return $this->belongsTo(User::class, 'sensei_id');
+    }
+    public function seito()
+    {
+        return $this->belongsTo(User::class, 'seito_id');
+    }
 }

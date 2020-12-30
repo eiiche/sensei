@@ -12,7 +12,7 @@
                     <!-- Using 'button-content' slot -->
                     <template #button-content>
                         <span>
-                            <img :src="'/images/1.png'" class="thumbnail">
+                            <img :src="user.icon" class="thumbnail">
                             <em class="text-white">{{user.name}}</em>
                         </span>
                     </template>
@@ -29,12 +29,18 @@
 </template>
 
 <script>
+    import axios from "axios";
+
     export default {
         components: {},
         data() {
             return {
                 user : null
             }
+        },
+        async created() {
+            await this.getUser()
+            console.log("フロント側ログインユーザは" + this.user)
         },
         methods: {
             onSubmit() {
@@ -51,10 +57,8 @@
                         }
                     })
             },
-            getUser(){
-                this.$store
-                    .dispatch('auth/getter')
-
+            async getUser(){
+                this.user = (await axios.get('/api/get_login_user')).data
             }
         },
     }

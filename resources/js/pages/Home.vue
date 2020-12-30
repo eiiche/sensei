@@ -6,19 +6,13 @@
                 <div class="mt-5">
                     <h3>申し込み中のSENSEI</h3>
                     <!--申し込んでいる依頼一覧-->
-                    <div class="border-lightgray d-inline-flex">
-                        <!--アイテム-->
-                        <div class="border-lightgray">
-                            <h5>2020/10/28 18:00 から 20:00</h5>
-                            <SenseiItem />
-                        </div>
-                        <div class="border-lightgray">
-                            <h5>2020/10/28 18:00 から 20:00</h5>
-                            <SenseiItem />
-                        </div>
-                        <div class="border-lightgray">
-                            <h5>2020/10/28 18:00 から 20:00</h5>
-                            <SenseiItem />
+                    <div v-for="(schedule,index) in schedules" :key="index">
+                        <div class="border-lightgray d-inline-flex">
+                            <!--アイテム-->
+                            <div class="border-lightgray">
+                                <h5>{{schedule.schedule}}より{{schedule.hour}}時間</h5>
+                                <SenseiItem v-bind:user="schedule.sensei"/>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -29,7 +23,9 @@
                     <h3>新着のSENSEI</h3>
                     <div class="grid">
                         <div class="item">
-                            <SenseiItem />
+                            <div v-for="(user,index) in users" :key="index">
+                                <SenseiItem v-bind:user="user"/>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -56,23 +52,34 @@
 
 <script>
     import axios from 'axios'
+
     export default {
         components: {},
         data() {
             return {
-                news: []
+                news: [],
+                schedules: [],
+                users:[]
             }
         },
         //Vueインスタンス生成時に実行する処理を記述
         created() {
-            this.fetchNews()
+            this.fetchNews(),
+                this.getScheduleBySeito(),
+            this.getLatestSensei()
         },
         methods: {
             async fetchNews() {
                 //paramに変数limit = 5を代入しgetリクエスト。変数limitはコントローラ側での処理に使う
                 //api.phpに記述されたルーティングを通してコントローラにアクセス
-                const news = (await axios.get(`/api/news`, { params: { limit: 5 } })).data
+                const news = (await axios.get(`/api/news`, {params: {limit: 5}})).data
                 this.news = news.data
+            },
+            async getScheduleBySeito() {
+                this.schedules = (await axios.get('/api/get_schedule_by_seito', {params: {id: 1}})).data
+            },
+            async getLatestSensei() {
+                this.users = (await axios.get('/api/sensei_latest')).data
             }
         }
     }

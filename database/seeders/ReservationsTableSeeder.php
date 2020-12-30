@@ -28,6 +28,7 @@ class ReservationsTableSeeder extends Seeder
         DB::table("reservations")->insert($param);
 
         $param = [
+            'id' => 2,
             'sensei_id' =>User::where('email','user3@test.com')->first()->id,
             'seito_id' =>User::where('email','user@test.com')->first()->id,
             'schedule' =>'2020-12-01 18:00:00',

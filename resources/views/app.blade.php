@@ -25,7 +25,8 @@
     <body>
         <div id="app"></div>
         <script>
-            window.currentUser = @json(Auth::user());
+            console.log("ログインユーザ" + @json(Auth::user()))
+            window.currentUser = @json(Auth::user())
         </script>
     </body>
 </html>

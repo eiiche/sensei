@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\Auth\RegisterController;
+use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -22,8 +23,10 @@ use App\Http\Controllers\Api\Auth\LogoutController;
 Route::get('news', [NewsController::class, 'index']);
 Route::get('sensei_latest', [UserController::class, 'getLatestSensei']);
 Route::get('sensei_page', [UserController::class, 'getUserById']);
+Route::get('get_schedule_by_seito',[ReservationController::class,'getReservationBySeito']);
 Route::post('login', [LoginController::class, 'handle']);
 Route::post('register', [RegisterController::class, 'handle']);
+Route::get('get_login_user',[LoginController::class,'getLoginUser']);
 Route::group(['middleware' => 'auth'], function () {
     Route::delete('logout', [LogoutController::class, 'handle']);
 });

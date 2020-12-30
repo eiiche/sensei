@@ -12,6 +12,7 @@ const actions = {
     },
     login: async ({ commit }, login) => {
         return axios.post('/api/login', login).then((response) => {
+            //vuexのステートの値はバックエンドでページ更新すると消えるため、バックエンドに渡す
             const user = response.data || null
             commit('SET_USER', user)
             return user

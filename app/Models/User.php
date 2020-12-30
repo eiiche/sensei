@@ -60,7 +60,7 @@ class User extends Authenticatable
      */
     public function sensei_reservations()
     {
-        return $this->hasMany(Reservation::class, 'seito_id', 'id');
+        return $this->hasMany(Reservation::class, 'sensei_id', 'id');
     }
     /**
      * 生徒に予約された場合のリレーション（生徒として予約したもの）
@@ -68,6 +68,6 @@ class User extends Authenticatable
      */
     public function seito_reservations()
     {
-        return $this->hasMany(Reservation::class, 'sensei_id', 'id');
+        return $this->hasMany(Reservation::class, 'seito_id', 'id');
     }
 }

@@ -41,4 +41,9 @@ class LoginController extends Controller
         //ユーザインスタンスを返却
         return response()->json($user);
     }
+    public function getLoginUser(){
+        $user = Auth::user();
+        clock("user is " , $user);
+        return response()->json($user);
+    }
 }

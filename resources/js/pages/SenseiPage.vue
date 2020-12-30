@@ -23,12 +23,14 @@
                 <div class="sensei-detail display-flex-column pt-2">
                     <h3>評価</h3>
                     <div class="pt-2">
-                        <div class="display-flex-row" v-for="(item,index) in sensei.reservation" :key="index">
-                            <div class="display-flex-column">
-                                <img :src="sensei.reservations.users.icon" class="thumbnail rounded-circle">
-                                <h3>eache</h3>
+                        <div v-for="(item,index) in sensei.sensei_reservations" :key="index">
+                            <div class="display-flex-row" v-if="item.review !== null">
+                                <div class="display-flex-column">
+                                    <img :src="item.seito.icon" class="thumbnail rounded-circle">
+                                    <h3>{{item.seito.name}}</h3>
+                                </div>
+                                <p class="ml-4">{{item.review.review_text}}</p>
                             </div>
-                            <p class="ml-4">大変良いです</p>
                         </div>
                     </div>
                 </div>
